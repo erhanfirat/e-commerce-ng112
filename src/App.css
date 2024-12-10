@@ -15,5 +15,21 @@
 }
 
 .title {
-  @apply text-cyan-500 text-xl py-2 border-b border-cyan-500;
+  @apply text-xl py-2 border-b border-gray-400 mb-2;
+}
+
+body {
+  @apply font-normal text-base;
+}
+
+a {
+  @apply font-semibold m-1;
+}
+
+.left-side a {
+  @apply text-sky-700 mb-1 mt-0;
+}
+
+.center-all {
+  @apply flex justify-center items-center;
 }

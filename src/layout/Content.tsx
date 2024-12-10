@@ -9,7 +9,7 @@ const Content: React.FC = () => {
     console.warn("CONTENT COMPONENT DID MOUNT!");
   }, []);
   return (
-    <div className="content p-3">
+    <div className="content p-3 grow">
       <HomePage />
       <ProductsPage />
       <ContactPage />

@@ -1,7 +1,7 @@
 const LeftSide: React.FC = () => {
   return (
-    <div className="left-side p-3 bg-slate-200 hidden md:block">
-      <h3>Menu</h3>
+    <div className="left-side p-3 bg-slate-200 hidden md:block basis-[200px]">
+      <h3 className="text-center">Kategoriler</h3>
       <nav className="flex flex-col items-center">
         <a href="#">Tişört</a>
         <a href="#">Kazak</a>

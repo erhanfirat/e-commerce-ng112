@@ -18,6 +18,7 @@ export default {
       },
     },
     spacing: {
+      0: "0px",
       1: "8px",
       2: "12px",
       3: "16px",
