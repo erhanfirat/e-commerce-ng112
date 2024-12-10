@@ -1,20 +1,16 @@
 const LeftSide: React.FC = () => {
   return (
-    <div className="left-side">
+    <div className="left-side p-3 bg-slate-200 hidden md:block">
       <h3>Menu</h3>
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Tişört</a>
-            <a href="#">Kazak</a>
-            <a href="#">Pantalon</a>
-            <a href="#">Ayakkabı</a>
-            <a href="#">Ceket</a>
-            <a href="#">Elbise</a>
-            <a href="#">Çanta</a>
-            <a href="#">Takı</a>
-          </li>
-        </ul>
+      <nav className="flex flex-col items-center">
+        <a href="#">Tişört</a>
+        <a href="#">Kazak</a>
+        <a href="#">Pantalon</a>
+        <a href="#">Ayakkabı</a>
+        <a href="#">Ceket</a>
+        <a href="#">Elbise</a>
+        <a href="#">Çanta</a>
+        <a href="#">Takı</a>
       </nav>
     </div>
   );

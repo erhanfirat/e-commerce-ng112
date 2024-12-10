@@ -18,11 +18,11 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,11 +31,11 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from "eslint-plugin-react";
 
 export default tseslint.config({
   // Set the react version
-  settings: { react: { version: '18.3' } },
+  settings: { react: { version: "18.3" } },
   plugins: {
     // Add the react plugin
     react,
@@ -44,10 +44,29 @@ export default tseslint.config({
     // other rules...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
+    ...react.configs["jsx-runtime"].rules,
   },
-})
+});
 ```
 
+# Tailwind CSS Kurulum
 
-nurettin.kaynar@ng112.gov.tr
+https://tailwindcss.com/docs/guides/vite
+
+## Tailwind Eklenti
+
+https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+
+## Flex
+
+### CheatSheet
+
+https://flexboxsheet.com/
+
+### Game
+
+https://flexboxfroggy.com/
+
+### Örnek
+
+https://codepen.io/erhanfirat/pen/LYMgWZZ

@@ -1,0 +1,19 @@
+.btn {
+  @apply bg-blue-600 text-white rounded py-1 px-3 border cursor-pointer transition;
+}
+
+.btn:hover {
+  @apply bg-blue-500;
+}
+
+.btn.btn-orange {
+  background-color: rgb(235, 118, 22);
+}
+
+.btn.btn-orange:hover {
+  background-color: rgb(241, 142, 61);
+}
+
+.title {
+  @apply text-cyan-500 text-xl py-2 border-b border-cyan-500;
+}

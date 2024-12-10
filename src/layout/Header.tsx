@@ -1,16 +1,13 @@
 const Header: React.FC = () => {
   return (
-    <div className="header">
-      <h1>E-Commerce</h1>
+    <div className="header p-3 bg-sky-500 text-white flex justify-between items-center flex-col md:flex-row lg:flex-row">
+      <h1 className="">E-Commerce</h1>
       <nav>
-        <ul>
-          <li>
-            <a href="#">Ana Sayfa</a>
-            <a href="#">Ürünler</a>
-            <a href="#">İletişim</a>
-          </li>
-        </ul>
+        <a href="#">Ana Sayfa</a>
+        <a href="#">Ürünler</a>
+        <a href="#">İletişim</a>
       </nav>
+      <div>User Panel</div>
     </div>
   );
 };
