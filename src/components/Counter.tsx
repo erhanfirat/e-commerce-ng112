@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import CounterDisplay from "./CounterDisplay";
 
 export type YumurtaEbat = "küçük" | "orta" | "büyük"; // 12 15 18
-const yumurtaFiyat = 15;
 
 const Counter: React.FC = () => {
   // 1 - States
@@ -15,6 +14,7 @@ const Counter: React.FC = () => {
   const increase = () => {
     setCounter((prevVal) => prevVal + 1);
     setCounter((prevVal) => prevVal + 1);
+    // 
   };
   const decrease = () => {
     setCounter(counter - 1);

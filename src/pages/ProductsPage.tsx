@@ -8,7 +8,7 @@ const ProductsPage = () => {
       <hr />
       <div className="flex flex-wrap gap-1">
         {productsList.map((productData) => (
-          <ProductCard productData={productData} />
+          <ProductCard key={productData.id} productData={productData} />
         ))}
       </div>
     </>
