@@ -33,3 +33,7 @@ a {
 .center-all {
   @apply flex justify-center items-center;
 }
+
+.active {
+  @apply text-xl text-sky-200;
+}

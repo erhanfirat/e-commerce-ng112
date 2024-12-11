@@ -1,20 +1,34 @@
-import axios from "axios";
 import Button from "./Button";
 import { API } from "../utils/api";
 import { useAppDispatch } from "../store/store";
 import { sepeteEkle } from "../store/product/productSlice";
+import { ProductType } from "../App";
+import React from "react";
+import { useHistory } from "react-router-dom";
 
-const ProductCard = ({ productData }) => {
+type ProductCardProp = {
+  productData: ProductType;
+};
+
+const ProductCard: React.FC<ProductCardProp> = ({
+  productData,
+}: ProductCardProp) => {
   const dispatch = useAppDispatch();
+  const history = useHistory();
 
   const deleteProduct = () => {
-    API.delete(`products/${productData.id}`).then((res) => {
+    API.delete(`products/${productData.id}`).then(() => {
       alert("Ürün başarıyla silindi!");
     });
   };
 
   const sepeteEkleFn = () => {
     dispatch(sepeteEkle(productData));
+  };
+
+  const incele = () => {
+    // todo: navigate to product detail page
+    history.push(`urunler/${productData.id}`);
   };
 
   return (
@@ -30,6 +44,10 @@ const ProductCard = ({ productData }) => {
       <p>{productData.price}</p>
       <Button color="orange" onClick={sepeteEkleFn}>
         Sepete Ekle
+      </Button>
+      <Button color="blue" onClick={incele}>
+        <i className="fa fa-search" />
+        İncele
       </Button>
       <Button onClick={deleteProduct} color="red">
         Sil

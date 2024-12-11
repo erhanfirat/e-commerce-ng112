@@ -1,9 +1,4 @@
-import { useState } from "react";
-import Button from "../components/Button";
-import Counter from "../components/Counter";
-
 const HomePage = () => {
-  const [show, setShow] = useState<boolean>(true);
   return (
     <>
       <h1 className="title">Ana Sayfa</h1>
@@ -13,8 +8,6 @@ const HomePage = () => {
         obcaecati ea in placeat consequuntur harum, commodi unde ullam culpa
         vero veniam.
       </p>
-      <Button onClick={() => setShow(!show)}>Toggle Counter</Button>
-      {show && <Counter />}
     </>
   );
 };
