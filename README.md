@@ -70,3 +70,7 @@ https://flexboxfroggy.com/
 ### Örnek
 
 https://codepen.io/erhanfirat/pen/LYMgWZZ
+
+## Redux DevTools
+
+https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?pli=1

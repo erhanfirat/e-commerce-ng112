@@ -5,6 +5,9 @@ import Content from "./layout/Content";
 import Footer from "./layout/Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API, doRequest, getProductsParams } from "./utils/api";
+import { useAppDispatch } from "./store/store";
+import { setProductList } from "./store/product/productSlice";
 
 export type ProductType = {
   createdAt: string;
@@ -19,21 +22,19 @@ export type ProductType = {
 };
 
 function App() {
-  const [products, setProducts] = useState<ProductType[]>([]);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     // component did mount
     // console.warn("APP COMPONENT DID MOUNT!");
     // Tüm uygulama başarıyla yüklendi
     // TODO: Ürün listesini backend den çek
-    const productsPromise = axios.get(
-      "https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products"
-    );
+    const productsPromise = API.get("products"); // doRequest(getProductsParams); //
 
     productsPromise
       .then((res) => {
         console.log("Serverdan cevap geldi: ", res.data);
-        setProducts(res.data);
+        dispatch(setProductList(res.data));
       })
       .catch((err) => {
         console.error("Serverdan cevap geldi: ", err);
@@ -43,12 +44,13 @@ function App() {
       });
   }, []);
 
+  console.warn("APP RENDERED ********************** ");
   return (
     <>
-      <Header products={products} />
+      <Header />
       <div className="flex flex-col md:flex-row">
         <LeftSide />
-        <Content products={products} />
+        <Content />
       </div>
       <Footer />
     </>

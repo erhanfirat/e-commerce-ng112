@@ -1,23 +1,33 @@
 import { useEffect, useState } from "react";
 import CounterDisplay from "./CounterDisplay";
+import { useAppDispatch, useAppSelector } from "../store/store";
+import {
+  decrement,
+  increment,
+  setCounterValue,
+} from "../store/counter/counterSlice";
+import Button from "./Button";
 
 export type YumurtaEbat = "küçük" | "orta" | "büyük"; // 12 15 18
 
 const Counter: React.FC = () => {
   // 1 - States
-  const [counter, setCounter] = useState<number>(0);
+  const counter = useAppSelector((store) => store.counter.value);
+  const dispatch = useAppDispatch();
+
   const [fiyat, setFiyat] = useState<number>(0);
   const [ebat, setEbat] = useState<YumurtaEbat>("orta");
 
   // 2 - Methods
 
   const increase = () => {
-    setCounter((prevVal) => prevVal + 1);
-    setCounter((prevVal) => prevVal + 1);
-    // 
+    dispatch(increment());
   };
   const decrease = () => {
-    setCounter(counter - 1);
+    dispatch(decrement());
+  };
+  const resetCounter = () => {
+    dispatch(setCounterValue(0));
   };
   const changeYumurtaEbat = (newEbat: YumurtaEbat) => setEbat(newEbat);
 
@@ -50,14 +60,17 @@ const Counter: React.FC = () => {
 
   // JSX Template return
   return (
-    <CounterDisplay
-      fiyat={fiyat}
-      ebat={ebat}
-      changeYumurtaEbat={changeYumurtaEbat}
-      counter={counter}
-      increase={increase}
-      decrease={decrease}
-    />
+    <>
+      <CounterDisplay
+        fiyat={fiyat}
+        ebat={ebat}
+        changeYumurtaEbat={changeYumurtaEbat}
+        counter={counter}
+        increase={increase}
+        decrease={decrease}
+      />
+      <Button onClick={resetCounter}>Reset</Button>
+    </>
   );
 };
 
