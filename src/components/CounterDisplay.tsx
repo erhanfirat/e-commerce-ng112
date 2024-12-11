@@ -25,7 +25,7 @@ const CounterDisplay: React.FC<CounterDisplayProps> = ({
 
   useEffect(() => {
     // component did mount
-    console.warn("COUNTER DISPLAY COMPONENT DID MOUNT!");
+    // console.warn("COUNTER DISPLAY COMPONENT DID MOUNT!");
   }, []);
 
   return (

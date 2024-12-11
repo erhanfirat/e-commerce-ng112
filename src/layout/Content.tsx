@@ -2,16 +2,19 @@ import { useEffect } from "react";
 import ProductsPage from "../pages/ProductsPage";
 import HomePage from "../pages/HomePage";
 import ContactPage from "../pages/ContactPage";
+import { ProductType } from "../App";
 
-const Content: React.FC = () => {
+type ContentProps = { products: ProductType[] };
+
+const Content: React.FC<ContentProps> = ({ products }: ContentProps) => {
   useEffect(() => {
     // component did mount
-    console.warn("CONTENT COMPONENT DID MOUNT!");
+    // console.warn("CONTENT COMPONENT DID MOUNT!");
   }, []);
   return (
     <div className="content p-3 grow">
       <HomePage />
-      <ProductsPage />
+      <ProductsPage products={products} />
       <ContactPage />
     </div>
   );

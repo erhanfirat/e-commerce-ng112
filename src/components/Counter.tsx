@@ -31,21 +31,21 @@ const Counter: React.FC = () => {
 
   useEffect(() => {
     fiyatHesapla();
-    console.log("useEffect tetiklendi");
+    // console.log("useEffect tetiklendi");
   }, [counter, ebat]);
 
   useEffect(() => {
     // component did mount
-    console.warn("COUNTER COMPONENT DID MOUNT!");
+    // console.warn("COUNTER COMPONENT DID MOUNT!");
     return () => {
       // Component will unmount / Component siliniyor
-      console.warn("COUNTER COMPONENT WILL UNMOUNT!");
+      // console.warn("COUNTER COMPONENT WILL UNMOUNT!");
     };
   }, []);
 
   useEffect(() => {
     // component did mount
-    console.warn("COUNTER COMPONENT DID UPDATE!");
+    // console.warn("COUNTER COMPONENT DID UPDATE!");
   });
 
   // JSX Template return

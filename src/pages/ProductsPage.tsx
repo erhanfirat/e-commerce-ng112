@@ -1,12 +1,16 @@
+import { ProductType } from "../App";
 import ProductCard from "../components/ProductCard";
-import { productsList } from "../utils/productsData";
 
-const ProductsPage = () => {
+type ProductsPageProps = { products: ProductType[] };
+
+const ProductsPage: React.FC<ProductsPageProps> = ({
+  products,
+}: ProductsPageProps) => {
   return (
     <>
       <h1 className="title">ÜRÜNLER</h1>
       <div className="flex flex-wrap gap-1">
-        {productsList.map((productData) => (
+        {products.map((productData) => (
           <ProductCard key={productData.id} productData={productData} />
         ))}
       </div>
